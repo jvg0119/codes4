@@ -1,0 +1,18 @@
+<h1>New Createapp note</h1>
+
+<%#= nested_form_for @createapp, url: createapps_path, html: {class: "createapp"}, :html => { :multipart => true } do |f| %>
+<%#= nested_form_for @createapp, url: createapps_path, :html => { :multipart => true } do |f| %>
+<%#= nested_form_for Arail::Createapp.new, url: createapps_path, :html => { :multipart => true } do |f| %>
+<%= nested_form_for @createapp, url: createapps_path, :html => { method: :post, :multipart => true } do |f| %>
+
+  <% if @createapp.errors.any? %>
+    <%= render partial: 'shared/error_message', locals: { object: @createapp } %>
+  <% end %>
+
+  <div class="col-md-8">
+
+    <%= render partial: 'createapps/form', locals: { f: f } %>
+
+  </div>
+
+<% end %>

@@ -1,0 +1,28 @@
+<div class="well">
+  <h1><%= @createapp.title %></h1>
+  <%= markdown_to_html @createapp.body %>
+
+  <% if @comments.any? %>
+    <div class="hline"></div>
+    <h4>Comments:</h4>
+    <%= render partial: 'comment', collection: @comments %>
+  <% else %>
+    <h4>No Comments</h4>
+  <% end %>
+
+  <% if @images.any? %>
+    <div class="hline"></div>
+    <%= render partial: 'image', collection: @images %>
+  <% else %>
+    <h4>No Images</h4>
+  <% end %>
+
+<hr>
+  <% if policy(@createapp).create? %>
+    <%= link_to "Edit", edit_createapp_path(@createapp), class: "btn btn-md btn-success" %>
+    <%= link_to "Delete", createapp_path(@createapp), method: :delete, confirm: { data: 'Are you sure?'}, class: "btn btn-md btn-danger" %>
+  <% end %>
+
+  <%= link_to "Back to Creatapp list", createapps_path, class: "btn btn-md btn-primary" %>
+
+</div>

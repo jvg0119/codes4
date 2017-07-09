@@ -35,3 +35,7 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.3'
+gem 'pundit', '~> 1.1'
+gem 'redcarpet', '~> 3.4'
+gem 'nested_form', '~> 0.3.2'
+gem 'paperclip', '~> 5.1'

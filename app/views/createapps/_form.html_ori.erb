@@ -1,0 +1,28 @@
+
+<%#= form_for  @createapp do |f| %>
+<%#= form_for [:arail, @createapp] do |f| %>
+<%#= form_for @createapp, url: createapps_path do |f| %>
+<%#= nested_form_for @createapp, url: createapps_path do |f| %>
+<%#= nested_form_for @createapp, url: createapps_path, :html => { :multipart => true } do |f| %>
+<%#= nested_form_for @createapp, url: createapps_path, html: {class: "arail_createapp"}, :html => { :multipart => true } do |f| %>
+<%= nested_form_for @createapp, html: {class: "createapp"}, :html => { :multipart => true } do |f| %>
+
+<div class="col-md-8">
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: "form-control", rows: 6 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-md btn-success" %>
+  </div>
+
+</div>
+
+<% end %>

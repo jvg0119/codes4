@@ -10,8 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- * require_tree .
- * require_self
+ *= require_tree .
+ *= require_self
  */
 
  @import "bootstrap-sprockets";
@@ -28,3 +28,21 @@
  body {
     padding-bottom: 100px; // Adding whitespace at bottom of HTML page
 }
+
+.active a {  // sidebar
+  background-color: #6a7e8c !important;
+  color: white !important;
+  font-size: 1.2em !important;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1.5px;
+}
+
+.hline { margin-top:30px; margin-bottom:10px; width:100%; height:2px; style:dashed; background: gray;}

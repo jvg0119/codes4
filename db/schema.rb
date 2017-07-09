@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170703220359) do
+ActiveRecord::Schema.define(version: 20170709000706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "arail_comments", force: :cascade do |t|
+    t.text "body"
+    t.bigint "arail_createapp_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["arail_createapp_id"], name: "index_arail_comments_on_arail_createapp_id"
+  end
+
+  create_table "arail_createapps", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "arail_images", force: :cascade do |t|
+    t.string "title"
+    t.bigint "arail_createapp_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "size"
+    t.string "content_file_name"
+    t.string "content_content_type"
+    t.integer "content_file_size"
+    t.datetime "content_updated_at"
+    t.index ["arail_createapp_id"], name: "index_arail_images_on_arail_createapp_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -29,8 +57,11 @@ ActiveRecord::Schema.define(version: 20170703220359) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "arail_comments", "arail_createapps"
+  add_foreign_key "arail_images", "arail_createapps"
 end

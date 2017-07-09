@@ -1,0 +1,15 @@
+<div>
+  <h1>Create App notes</h1>
+  <h2>Basic app creation</h2>
+</div>
+
+  <%= render @createapps %>
+
+  <%# @createapps.each do |createapp| %>
+    <%#= createapp.title %>
+    <%#= render partial: "createapp", locals: { createapp: createapp} %>
+  <%# end %>
+
+  <hr>
+    <%= link_to "Add new 'Create App note'", new_createapp_path, class: "btn btn-md btn-primary" if policy(Arail::Createapp.new).create? %>
+  <br>

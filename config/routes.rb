@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+
+  resources :acontrollers
+  resources :amodels
+  resources :createapps
+
   devise_for :users
   resources :users, only: [:update]
 

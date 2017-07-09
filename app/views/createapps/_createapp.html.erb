@@ -1,0 +1,8 @@
+<div class="well">
+
+  <h3><strong><em><%= link_to createapp.title, createapp_path(createapp) %></em></strong></h3>
+  <%#= markdown_to_html(createapp.body) %><br/>
+  <%= markdown_to_html(truncate(createapp.body, length: 100, separator: ' ') ) %>
+  <br/>
+
+</div>

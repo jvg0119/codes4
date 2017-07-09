@@ -1,0 +1,30 @@
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card-2" style="width:160px;">
+  <!-- <a href="#" class="w3-bar-item w3-button">Link 1</a> -->
+  <%#= link_to "Rails Information", "#", class: "w3-bar-item w3-button" %>
+  <span class="<%= createapp_active?(params[:controller]) %>">
+    <%= link_to "Create App", createapps_path, class: "w3-bar-item w3-button" %>
+  </span>
+  <span class="<%= amodel_active?(params[:controller]) %>">
+    <%= link_to "Model", amodels_path, class: "w3-bar-item w3-button" %>
+  </span>
+  <span class="<%= acontroller_active?(params[:controller]) %>">
+    <%= link_to "Controller", acontrollers_path, class: "w3-bar-item w3-button" %>
+  </span>
+
+  <span class="<%= acontroller_active?(params[:controller]) %>">
+    <%= link_to "View", "#", class: "w3-bar-item w3-button" %>
+  </span>
+  <span class="<%= acontroller_active?(params[:controller]) %>">
+    <%= link_to "Router", "#", class: "w3-bar-item w3-button" %>
+  </span>
+  <span class="<%= acontroller_active?(params[:controller]) %>">
+    <%= link_to "Rails5", "#", class: "w3-bar-item w3-button" %>
+  </span>
+  <span class="<%= acontroller_active?(params[:controller]) %>">
+    <%= link_to "API", "#", class: "w3-bar-item w3-button" %>
+  </span>
+  <span class="<%= acontroller_active?(params[:controller]) %>">
+    <%= link_to "Misc", "#", class: "w3-bar-item w3-button" %>
+  </span>
+
+</div>

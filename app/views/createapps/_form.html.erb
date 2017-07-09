@@ -1,0 +1,68 @@
+
+<%#= form_for  @createapp do |f| %>
+<%#= form_for [:arail, @createapp] do |f| %>
+<%#= form_for @createapp, url: createapps_path do |f| %>
+<%#= nested_form_for @createapp, url: createapps_path do |f| %>
+<%#= nested_form_for @createapp, url: createapps_path, :html => { :multipart => true } do |f| %>
+<%#= nested_form_for @createapp, url: createapps_path, html: {class: "arail_createapp"}, :html => { :multipart => true } do |f| %>
+
+<div class="form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control", autofocus: true %>
+</div>
+
+<div class="form-group">
+  <%= f.label :body %>
+  <%= f.text_area :body, class: "form-control", rows: 10 %>
+</div>
+
+<div class="well">
+  <%= f.fields_for :arail_comments do |comment_form| %>
+    <div class="form-group">
+      <%= comment_form.label :body, "Comment body" %>
+      <%= comment_form.text_area :body, class: "form-control", rows: 10 %>
+    </div>
+    <div class="form-group">
+      <%= comment_form.link_to_remove "remove this comment" %>
+    </div>
+
+  <% end %>
+
+  <%= f.link_to_add "Add a comment", :arail_comments %>
+
+</div>
+
+
+<div class="well">
+  <%= f.fields_for :arail_images do |image_form| %>
+    <div class="form-group">
+      <%= image_form.label :title, "Image description: " %>
+      <%= image_form.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= image_form.file_field :content %>
+    </div>
+    <div>
+      <div class="form-group">
+          <%= image_form.radio_button(:size, "exlarge") %> exlarge
+          <%= image_form.radio_button(:size, "large") %> large
+          <%= image_form.radio_button(:size, "medium") %> medium
+          <%= image_form.radio_button(:size, "small") %> small
+          <%= image_form.radio_button(:size, "original") %> original
+        </div>
+    </div>
+    <div class="form-group">
+      <%= image_form.link_to_remove "remove this image" %>
+    </div>
+  <% end %>
+
+    <%= f.link_to_add "Add an image", :arail_images %>
+
+</div>
+
+
+<div class="form-group">
+  <%= f.submit class: "btn btn-md btn-success" %>
+  <%= link_to "Cancel", request.referer || createapps_path, class: "btn btn-md btn-primary" %>
+  <%#= link_to "Cancel", :back, class: "btn btn-md btn-success" %>
+</div>

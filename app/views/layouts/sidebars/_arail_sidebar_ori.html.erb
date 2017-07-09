@@ -1,0 +1,67 @@
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card-2" style="width:160px;">
+  <!-- <a href="#" class="w3-bar-item w3-button">Link 1</a> -->
+  <%#= link_to "Rails Information", "#", class: "w3-bar-item w3-button" %>
+  <span class="<%= create_app_active?(params[:controller]) %>">
+    <%= link_to "Create App", createapps_path, class: "w3-bar-item w3-button" %>
+  </span>
+
+  <span class="<%= "#" %>">
+    <%#= model_active?(params[:controller]) %>
+    <%#= link_to "Model", bmodels_path, class: "w3-bar-item w3-button" %>
+  </span>
+  <%#= mycontroller_active?(params[:controller]) %>
+  <span class="<%= link_to "Controller", "#", class: "w3-bar-item w3-button" %>">
+    <%#= link_to "Controller", ccontrollers_path, class: "w3-bar-item w3-button" %>
+
+  </span>
+  <%= link_to "View", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "Router", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "Mailer", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "API", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "Postgresql", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "Rails 5", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "Rails Resources", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "Misc", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "Blank", "#", class: "w3-bar-item w3-button" %>
+
+  <%= link_to "", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "", "#", class: "w3-bar-item w3-button" %>
+  <%= link_to "Blank**", "#", class: "w3-bar-item w3-button" %>
+
+
+
+
+<div class="w3-bar-item w3-button" onclick="myAccFunc('demoAcc1')">
+  BlankAccordion1 <i class="fa fa-caret-down"></i></div>
+  <div id="demoAcc1" class="w3-hide w3-white w3-card-4">
+    <a href="#" class="w3-bar-item w3-button">accLink1</a>
+    <a href="#" class="w3-bar-item w3-button">accLink2</a>
+  </div>
+
+  <div class="w3-bar-item w3-button" onclick="myAccFunc('demoAcc2')">
+    BlankAccordion2 <i class="fa fa-caret-down"></i></div>
+    <div id="demoAcc2" class="w3-hide w3-white w3-card-4">
+      <a href="#" class="w3-bar-item w3-button">acc2Link1</a>
+      <a href="#" class="w3-bar-item w3-button">acc2Link2</a>
+    </div>
+
+  <div class="w3-dropdown-click">
+    <div class="w3-bar-item w3-button" onclick="myDropFunc()">
+      BlankDropdown1 <i class="fa fa-caret-down"></i>
+    </div>
+    <div id="demoDrop" class="w3-dropdown-content w3-white w3-card-4">
+      <a href="#" class="w3-bar-item w3-button">Link1</a>
+      <a href="#" class="w3-bar-item w3-button">Link2</a>
+    </div>
+
+    <%= link_to "", "#", class: "w3-bar-item w3-button" %>
+    <%= link_to "", "#", class: "w3-bar-item w3-button" %>
+    <%= link_to "", "#", class: "w3-bar-item w3-button" %>
+    <%= link_to "", "#", class: "w3-bar-item w3-button" %>
+    <%= link_to "Blank *****", "#", class: "w3-bar-item w3-button" %>
+  </div>
+
+</div>

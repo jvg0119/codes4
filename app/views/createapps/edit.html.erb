@@ -1,0 +1,18 @@
+<h1>Edit Createapp: <%= @createapp.title %></h1>
+
+<%#= render 'createapps/form' %>
+
+<%#= nested_form_for @createapp, url: createapp_path(@createapp), html: {method: :patch}, :html => { :multipart => true } do |f| %>
+<%= nested_form_for @createapp, url: createapp_path(@createapp), html: {method: :patch, :multipart => true} do |f| %>
+
+  <% if @createapp.errors.any? %>
+    <%= render partial: 'shared/error_message', locals: { object: @createapp } %>
+  <% end %>
+
+  <div class="col-md-8">
+
+    <%= render partial: 'createapps/form', locals: { f: f } %>
+
+  </div>
+
+<% end %>
